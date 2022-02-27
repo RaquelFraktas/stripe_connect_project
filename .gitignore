@@ -36,3 +36,7 @@ yarn-debug.log*
 .yarn-integrity
 .env
 /config/credentials/development.key
+
+
+drawbacks-
+couldnt create a busiess account and had to only use the test account. they couldnt verify the tax id for my "business"
