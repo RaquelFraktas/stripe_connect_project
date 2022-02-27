@@ -12,19 +12,26 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # https://github.com/heartcombo/devise#omniauth
 
   # GET|POST /resource/auth/twitter
-  # def passthru
-  #   super
-  # end
+  def passthru
+    super
+  end
 
   # GET|POST /users/auth/twitter/callback
-  # def failure
-  #   super
-  # end
+  def failure
+    super
+  end
+
+  def stripe_connect
+    # Delete the code inside of this method and write your own.
+    # The code below is to show you where to access the data.
+    raise request.env["omniauth.auth"].to_yaml
+  end
+end
 
   # protected
 
   # The path used when OmniAuth fails
-  # def after_omniauth_failure_path_for(scope)
-  #   super(scope)
-  # end
+  def after_omniauth_failure_path_for(scope)
+    super(scope)
+  end
 end
