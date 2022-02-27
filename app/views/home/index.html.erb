@@ -1,15 +1,24 @@
 
+<div class="home-container">
+
   <h1> Hello! </h1>
-<% if @no_user %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
+  <% if @no_user %>
+    <%= link_to "Sign up", new_user_registration_path, class: 'login-signup'  %> 
+    <%= link_to "Login", new_user_session_path, :class => 'navbar-link', class: "login-signup" %>
+  <% end %>
+  
+  
+  <% if @user %>
+  Your email is <%= @user.email %>
+  <br>
+    <% if @user.uid %>
+      You are connected to stripe.
+      <br>
+      You bank with <%= @user.bank %>
+    <% else %>
+      <%= stripe_connect_button %>
+    <% end %>
+    <%= button_to "logout", destroy_user_session_path, method: :delete  %>
+  <% end %>
 
-
-<% if @user %>
-<%= @user.email %>
-<br>
-<%= stripe_connect_button %>
-
-  <%= button_to "logout", destroy_user_session_path, method: :delete  %>
-<% end %>
+</div>
