@@ -313,6 +313,7 @@ Devise.setup do |config|
   # scope: 'read-write',
   # stripe_landing: 'login'
 
-  config.omniauth :stripe_connect, "STRIPE_CONNECT_CLIENT_ID", "STRIPE_SECRET"
 
+  config.omniauth :stripe_connect, ENV["STRIPE_CONNECT_CLIENT_ID"], ENV["STRIPE_SECRET"]
+  
 end
