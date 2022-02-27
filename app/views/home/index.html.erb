@@ -8,5 +8,8 @@
 
 <% if @user %>
 <%= @user.email %>
+<br>
+<%= stripe_connect_button %>
+
   <%= button_to "logout", destroy_user_session_path, method: :delete  %>
 <% end %>
