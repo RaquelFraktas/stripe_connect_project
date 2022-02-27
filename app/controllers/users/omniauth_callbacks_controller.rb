@@ -17,15 +17,12 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = current_user
 
     if @user.persisted?
-      byebug
       @user.uid = auth_data.uid
       @user.provider = auth_data.provider
       @user.access_code = auth_data.credentials.token
       @user.publishable_key = auth_data.info.stripe_publishable_key
       @user.bank= auth_data.extra.extra_info.external_accounts.data[0].bank_name
       @user.save
-
-      
 
       sign_in_and_redirect @user, event: :authentication
       flash[:notice] = "Stripe Account Connected" if is_navigational_format?
