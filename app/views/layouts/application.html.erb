@@ -10,6 +10,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
   <body>
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
@@ -17,6 +18,12 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+
+    <%= image_tag "mavenseed.png", class: "banner"%>
+
     <%= yield %>
   </body>
+
+  <footer> Created by Raquel Fraktas </footer>
+
 </html>
