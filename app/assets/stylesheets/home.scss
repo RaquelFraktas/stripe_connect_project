@@ -25,11 +25,17 @@ h2 {
     font-size: 2rem;
 }
 
+h3 {
+    font-weight: normal;
+}
+
 
 a {
     color: #199473;
     font-size: 0.875rem;
     text-decoration: none;
+    margin-left: 10%;
+
 
     &:hover {
         color: #0e5340;
