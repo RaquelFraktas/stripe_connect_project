@@ -59,4 +59,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'stripe'
 gem 'omniauth'
 gem 'omniauth-stripe-connect'
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails'
